@@ -10,27 +10,25 @@
 int check_cycle(listint_t *list)
 {
 	int *buf;
-	unsigned int size;
-	unsigned int i;
-	unsigned int j;
+	int size;
+	int i;
+	int j;
 
 	size = print_listint(list);
 	buf = malloc(sizeof(int) * size);
-	
+
 	if (buf == NULL)
-	       exit(1);
+		exit(1);
 
 	for (i = 0; i < size; i++)
 	{
 		buf[i] = list->n;
 		list = list->next;
-		j = i;
-		while (j--)
+		for (j = i; j >= 0; j--)
 		{
-			if (list->n == buf[j])
+			if (list->n == buf[j - 1])
 				return (1);
 		}
 	}
-
-	return(0);
+	return (0);
 }
