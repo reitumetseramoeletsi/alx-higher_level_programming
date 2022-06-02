@@ -7,7 +7,7 @@ def args_1(argv):
     n = len(argv) - 1
 
     if n == 0:
-        print("{:d} argumennts.".format(n))
+        print("{:d} arguments.".format(n))
         return
     elif n == 1:
         print("{:d} argument:".format(n))
