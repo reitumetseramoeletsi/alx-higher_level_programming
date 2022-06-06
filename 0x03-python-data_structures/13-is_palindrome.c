@@ -1,6 +1,25 @@
 #include <stdio.h>
 #include "lists.h"
 
+listint_t *reverse_listint(listint_t **head)
+{
+	listint_t *tmp, *tail;
+
+        if (*head == NULL)
+		return (NULL);
+	tmp = NULL;
+	tail = *head;
+	while (tail->next != NULL)
+	{
+		 *head = tail->next;
+		 tail->next = tmp;
+		 tmp = tail;
+		 tail = *head;
+	}
+	 tail->next = tmp;
+	 *head = tail;
+	 return (tail);
+}
 /**
  * is_palindrome - determines if a string is palindrome
  * @head: pointer to the head of a list
@@ -10,22 +29,14 @@
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *tail;
-	listint_t *tmp;
+/*	listint_t *tail;
+	listint_t *tmp;*/
 	listint_t *current;
 	listint_t *current_h;
 
 	current = *head;
 	current_h = *head;
-	tmp = NULL;
-
-	while (current != NULL)
-	{
-		tail = current;
-		current = current->next;
-		tail->next = tmp;
-		tmp = tail;
-	}
+/*	tmp = NULL;*/
 
 	while (current_h != NULL)
 	{
@@ -33,19 +44,31 @@ int is_palindrome(listint_t **head)
 		printf("%d ", current_h->n);
 		current_h = current_h->next;
 	}
-	while (tail != NULL)
+	
+	/*while (current != NULL)
 	{
-/*		if (tail == current_h)
+		tail = current;
+		current = current->next;
+		tail->next = tmp;
+		tmp = tail;
+	}*/
+	reverse_listint(&current);
+	while (current != NULL)
+	{
+		printf("%d\n ", current->n);
+		current = current->next;
+		if (current == current_h)
 		{
-			tail = tail->next;
+			current = current->next;
 			current_h = current_h->next;
-		}*/
-		printf("%d ", tail->n);
-		tail = tail->next;
+		}
+		else
+			return (0);
 	}
 
 	return (1);
 }
+/*
 int main(void)
 {
 	listint_t *head;
@@ -57,10 +80,10 @@ int main(void)
 	add_nodeint_end(&head, 1);
 	is_palindrome(&head);
 
-/*	if (is_palindrome(&head) == 1)
+	if (is_palindrome(&head) == 1)
 		printf("Linked list is a palindrome\n");
     	else
-		printf("Linked list is not a palindrome\n");*/
+		printf("Linked list is not a palindrome\n");
 
 	return (0);
-}
+}*/
