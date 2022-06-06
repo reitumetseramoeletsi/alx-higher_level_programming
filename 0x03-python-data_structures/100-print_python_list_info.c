@@ -2,18 +2,18 @@
 
 /**
  * print_python_list_info - Prints some basic info about Python lists.
- * @p: A PyObject list.
+ * @p: given pointer to the py list.
  */
 void print_python_list_info(PyObject *p)
 {
-	int size, alloc, i;
+	int size, mem, i;
 	PyObject *obj;
 
 	size = Py_SIZE(p);
-	alloc = ((PyListObject *)p)->allocated;
+	mem = ((PyListObject *)p)->allocated;
 
 	printf("[*] Size of the Python List = %d\n", size);
-	printf("[*] Allocated = %d\n", alloc);
+	printf("[*] Allocated = %d\n", mem);
 
 	for (i = 0; i < size; i++)
 	{
