@@ -1,9 +1,11 @@
 #!/usr/bin/python3
-
-# -*- coding: Python class
+"""
+0-square.py
+"""
 
 
 class Square:
-    '''Class Square
-    '''
+    """
+    New empty Square class that defines a square
+    """
     pass
