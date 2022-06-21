@@ -2,8 +2,7 @@
 
 
 class Square:
-    """Class Square
+    '''Class Square
 
-    """
-
+    '''
     pass
