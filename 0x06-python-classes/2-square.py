@@ -3,13 +3,13 @@
 
 
 class Square:
-    """Initialises Square with size as integer"""
+    """snitialises Square with size as integer"""
 
     def __init__(self, size=0):
-        """Size should be int"""
+        """size should be int"""
 
-        if isinstance(size, int) is False:
-            raise TypeError("Size must be an integer")
+        if type(size) != int:
+            raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
         self.__size = size
