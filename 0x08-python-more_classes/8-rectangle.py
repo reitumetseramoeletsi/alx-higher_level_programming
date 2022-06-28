@@ -9,7 +9,7 @@ class Rectangle:
     number_of_instances = 0
     print_symbol = "#"
 
-    def bigger_or_equal(rec_1, rec_2):
+    def bigger_or_equal(rect_1, rect_2):
         """Returns the biggest rectangle"""
         if type(rect_1) is not Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
