@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This function inserts a line of text to a file, 
+This function inserts a line of text to a file,
 after each line containing a specific string
 """
 
