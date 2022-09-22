@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-The module to test the function rectangle"""
+The module to test the function rectangle
+"""
 import unittest
 import rectangle
 

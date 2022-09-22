@@ -6,14 +6,14 @@ import json
 
 
 class Base:
-    ''' first class Base
-    '''
+    """ first class Base
+    """
 
     __nb_objects = 0
 
     def __init__(self, id=None):
-        ''' initialize Base  __init__
-        '''
+        """ initialize Base  __init__
+        """
         if id is not None:
             self.id = id
         else:
@@ -22,8 +22,8 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        '''method: save_to_file
-        '''
+        """method: save_to_file
+        """
         list_dicts = []
         if list_objs is not None:
             for obj in list_objs:
@@ -40,8 +40,8 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        ''' method json string
-        '''
+        """ method json string
+        """
         ret_list = []
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
@@ -54,8 +54,8 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        ''' method json string
-        '''
+        """ method json string
+        """
         ret_list = []
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
