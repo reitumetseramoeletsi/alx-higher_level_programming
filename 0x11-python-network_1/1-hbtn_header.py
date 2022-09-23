@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-# This script that takes in a URL sends a request to the URL
+"""
+This script that takes in a URL sends a request to the URL
+"""
+
 import sys
 from urllib import (request)
 
